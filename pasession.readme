@@ -1,0 +1,720 @@
+pa session
+# Power Automate 101
+
+### Automate repetitive work. Connect systems. Build smarter business processes.
+
+**Beginner Training | 50 Minutes**
+
+---
+
+# Today's Goal
+
+By the end of this session, you should understand:
+
+* What Power Automate is
+* Why businesses use automation
+* What kinds of problems Power Automate can solve
+* How a basic flow works
+* Triggers, actions, conditions, and dynamic content
+* Automated, instant, and scheduled flows
+* How Power Automate works with SharePoint, Dataverse, Power Apps, Teams, and Outlook
+
+> You do not need any previous Power Automate experience.
+
+---
+
+# Before Power Automate...
+
+Imagine this business process:
+
+1. An employee submits an equipment request
+2. Someone checks the request
+3. Someone emails the manager
+4. The manager approves or rejects it
+5. Someone updates the request status
+6. Someone emails the employee
+
+### What's the problem?
+
+A person has to remember and manually perform every step.
+
+It's repetitive, time-consuming, and easy to miss something.
+
+---
+
+# What If We Automated It?
+
+### Employee submits a request
+
+↓
+
+### Manager automatically receives an approval
+
+↓
+
+### Manager approves or rejects
+
+↓
+
+### Request status automatically updates
+
+↓
+
+### Employee automatically receives the result
+
+**That's where Power Automate comes in.**
+
+---
+
+# What is Power Automate?
+
+**Microsoft Power Automate** is a tool for creating automated workflows between applications and services.
+
+A simple way to think about it:
+
+> **When something happens → automatically do something else.**
+
+For example:
+
+**When** a SharePoint item is created
+→ **Send** an email
+
+**When** a request is submitted
+→ **Ask** the manager for approval
+
+**Every morning**
+→ **Find** overdue tasks
+→ **Send** reminders
+
+---
+
+# What Can We Automate?
+
+### 🔔 Notifications
+
+Notify someone when something important happens.
+
+### ✅ Approvals
+
+Automate manager, expense, access, document, or other approvals.
+
+### ⏰ Reminders
+
+Automatically remind users about pending or overdue work.
+
+### 🔄 Data Movement
+
+Move information between systems.
+
+### 📝 Data Updates
+
+Automatically update records when something happens.
+
+### 📁 Documents
+
+Create, copy, move, rename, or organize files.
+
+### 📅 Scheduled Processes
+
+Run processes every hour, day, week, or month.
+
+---
+
+# Real-World Examples
+
+### Employee Onboarding
+
+New employee added
+→ Create onboarding tasks
+→ Notify IT
+→ Notify manager
+→ Create required folders
+
+### Expense Approval
+
+Expense submitted
+→ Manager approval
+→ Update status
+→ Notify employee
+
+### Overdue Tasks
+
+Every morning
+→ Find overdue tasks
+→ Email task owners
+
+### Document Approval
+
+Document uploaded
+→ Send for review
+→ Approved?
+→ Move to Approved folder
+
+---
+
+# The Most Important Concept
+
+Almost every flow starts with this idea:
+
+# TRIGGER → ACTION
+
+### Trigger
+
+**What starts the flow?**
+
+Examples:
+
+* SharePoint item created
+* Dataverse row added
+* Email received
+* User clicks a button
+* Every Monday at 9 AM
+
+### Action
+
+**What should happen next?**
+
+Examples:
+
+* Send email
+* Update record
+* Create file
+* Post Teams message
+* Start approval
+
+---
+
+# Adding Business Logic
+
+Real business processes aren't always:
+
+**Trigger → Action**
+
+Sometimes we need to make a decision.
+
+### TRIGGER → ACTION → CONDITION → ACTION
+
+Example:
+
+Request submitted
+
+↓
+
+Get request information
+
+↓
+
+**Amount > $5,000?**
+
+↙ YES　　　　NO ↘
+
+Manager Approval　Auto Approve
+
+This is a **Condition**.
+
+---
+
+# Four Concepts to Remember
+
+## 1. Trigger
+
+What starts the flow?
+
+## 2. Action
+
+What should Power Automate do?
+
+## 3. Condition
+
+Should we take one path or another?
+
+## 4. Dynamic Content
+
+Information coming from previous steps.
+
+If you understand these four concepts, you already understand the foundation of Power Automate.
+
+---
+
+# What is Dynamic Content?
+
+Suppose someone submits:
+
+**Employee:** John Smith
+**Request:** Laptop
+**Amount:** $1,500
+
+Instead of hardcoding:
+
+> "John Smith requested a Laptop"
+
+We can use information from the trigger:
+
+> "[Employee Name] requested a [Request Type]"
+
+Power Automate automatically uses the values from the current request.
+
+This is called **Dynamic Content**.
+
+---
+
+# Three Common Types of Flows
+
+## ⚡ Automated Flow
+
+Starts when something happens.
+
+**Example:**
+
+New SharePoint item
+→ Send notification
+
+---
+
+## 👆 Instant Flow
+
+Starts when someone manually triggers it.
+
+**Example:**
+
+User clicks button
+→ Submit request for processing
+
+---
+
+## 🕐 Scheduled Flow
+
+Starts at a specific time or frequency.
+
+**Example:**
+
+Every morning at 8 AM
+→ Find overdue requests
+→ Send reminders
+
+---
+
+# Think About the Trigger
+
+### Scenario 1
+
+"When a new employee is added, notify IT."
+
+**Trigger:** New employee is added
+
+### Scenario 2
+
+"Every Friday, send a weekly report."
+
+**Trigger:** Every Friday
+
+### Scenario 3
+
+"When a user clicks Submit, start processing."
+
+**Trigger:** User action
+
+Understanding the trigger is usually the first step in designing a flow.
+
+---
+
+# Power Automate Connects Systems
+
+Power Automate doesn't usually work alone.
+
+It connects different applications and services.
+
+### Common Examples
+
+**SharePoint**
+Lists, documents, files
+
+**Dataverse**
+Business application data
+
+**Power Apps**
+User interface
+
+**Outlook**
+Emails and calendars
+
+**Teams**
+Messages and notifications
+
+**Approvals**
+Business approval processes
+
+These integrations are called **Connectors**.
+
+---
+
+# The Power Platform Picture
+
+Think about a business application like this:
+
+### Power Apps
+
+**What users interact with**
+
+↓
+
+### SharePoint / Dataverse
+
+**Where the data lives**
+
+↓
+
+### Power Automate
+
+**What happens behind the scenes**
+
+For example:
+
+Employee clicks **Submit** in Power Apps
+
+↓
+
+Request saved in Dataverse
+
+↓
+
+Power Automate starts
+
+↓
+
+Manager receives approval
+
+↓
+
+Dataverse status updated
+
+↓
+
+Employee receives notification
+
+---
+
+# LIVE DEMO
+
+## Equipment Request Approval
+
+We are going to build this:
+
+Employee submits request
+
+↓
+
+SharePoint item created
+
+↓
+
+Power Automate automatically starts
+
+↓
+
+Manager receives approval
+
+↓
+
+### Approved?
+
+**YES**
+→ Update Status = Approved
+→ Notify Employee
+
+**NO**
+→ Update Status = Rejected
+→ Notify Employee
+
+---
+
+# Demo — Our SharePoint List
+
+### Equipment Requests
+
+| Title      | Request Type | Manager   | Status |
+| ---------- | ------------ | --------- | ------ |
+| New Laptop | Laptop       | Manager A | New    |
+| Monitor    | Monitor      | Manager B | New    |
+| Keyboard   | Accessories  | Manager A | New    |
+
+Our flow should automatically start whenever a new request is added.
+
+---
+
+# Demo — Step 1
+
+## Choose the Trigger
+
+**SharePoint**
+
+### When an item is created
+
+Ask yourself:
+
+> What event should cause my automation to start?
+
+For our example:
+
+**New Equipment Request = Start the Flow**
+
+---
+
+# Demo — Step 2
+
+## Send an Approval
+
+Add:
+
+### Start and wait for an approval
+
+Send the approval to the employee's manager.
+
+Include information such as:
+
+* Employee
+* Request Type
+* Description
+* Request Date
+
+Notice that these values come from **Dynamic Content**.
+
+---
+
+# Demo — Step 3
+
+## Check the Decision
+
+Add a **Condition**:
+
+### Outcome = Approve?
+
+Now Power Automate can follow two different paths.
+
+**YES**
+
+Request was approved.
+
+**NO**
+
+Request was rejected.
+
+---
+
+# Demo — Step 4
+
+## Update SharePoint
+
+### YES Branch
+
+Update:
+
+**Status = Approved**
+
+### NO Branch
+
+Update:
+
+**Status = Rejected**
+
+Now our SharePoint list reflects the manager's decision automatically.
+
+---
+
+# Demo — Step 5
+
+## Notify the Employee
+
+### Approved
+
+Send:
+
+> Your equipment request has been approved.
+
+### Rejected
+
+Send:
+
+> Your equipment request was not approved.
+
+Our entire business process is now automated.
+
+---
+
+# What Just Happened?
+
+We used:
+
+### Trigger
+
+SharePoint item created
+
+### Dynamic Content
+
+Request information
+
+### Action
+
+Send approval
+
+### Condition
+
+Approved or rejected?
+
+### Action
+
+Update SharePoint
+
+### Action
+
+Send notification
+
+That is a complete business workflow.
+
+---
+
+# Let's Design One Together
+
+### Business Requirement
+
+> Every morning, find requests that are still pending and remind the request owners.
+
+Think about four questions:
+
+### 1. What starts the flow?
+
+### 2. Where is our data?
+
+### 3. What condition are we checking?
+
+### 4. What should happen?
+
+---
+
+# Answer
+
+### What starts it?
+
+Scheduled trigger — every morning
+
+↓
+
+### Where is the data?
+
+SharePoint
+
+↓
+
+### What are we looking for?
+
+Status = Pending
+
+↓
+
+### What should happen?
+
+Send a reminder
+
+So our design becomes:
+
+**Schedule → Get Items → Check Status → Send Reminder**
+
+---
+
+# How to Think Like a Flow Developer
+
+Before opening Power Automate, answer these questions:
+
+### 1. What is the business problem?
+
+### 2. What starts the process?
+
+### 3. What information do I need?
+
+### 4. Do I need to make any decisions?
+
+### 5. What actions need to happen?
+
+### 6. Where should the result be stored?
+
+Design the process first.
+
+Build the flow second.
+
+---
+
+# What We Are NOT Learning Today
+
+There is much more to Power Automate:
+
+* Loops
+* Variables
+* Expressions
+* Error handling
+* Dataverse
+* Child flows
+* APIs / HTTP
+* Custom connectors
+* Solutions
+* Environment variables
+* Connection references
+* ALM
+* Performance optimization
+
+Don't worry about these yet.
+
+Today is about understanding the foundation.
+
+---
+
+# Quick Recap
+
+Remember:
+
+# TRIGGER → ACTION → DECISION → ACTION
+
+Ask yourself:
+
+**What starts it?**
+
+**What data do I need?**
+
+**What decisions do I need to make?**
+
+**What should happen?**
+
+Once you can answer those questions, you can start designing a Power Automate flow.
+
+---
+
+# Key Takeaway
+
+Power Automate is not just about sending emails.
+
+It allows us to automate **business processes across systems**.
+
+### Look for work that is:
+
+**Repetitive**
+
+**Rule-based**
+
+**Manual**
+
+**Time-consuming**
+
+**Easy to forget**
+
+Those are great candidates for automation.
+
+---
+
+# Questions?
+
+### Next Session
+
+We can start getting hands-on with:
+
+**Triggers + Actions + Conditions + SharePoint**
+
+and build flows together.
